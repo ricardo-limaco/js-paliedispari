@@ -4,48 +4,45 @@ function numeroRandom (numeroMin, numeroMax) {
 }
 
 
-// Function Somma 
-function somma(numeroUtente, numeroCpu) {
-  const risultatoSomma = (numeroUtente + numeroCpu);
-  console.log("Risultato somma Utente e CPU:",risultatoSomma);
-
-  if (risultatoSomma % 2 == 0) {
-    console.log("Il numero è pari");
-    return pari;
-  } else {
-    console.log("Il numero è dispari");
-    return dispari;
-  }
-}
 
 
-
-
-// Scelte dati utente (pari o dispari, numero)
+// Richiesta dati utente (pari o dispari, numero)
 const sceltaUtente = prompt("Scegli pari o dispari");
 const numeroUtente = parseInt(prompt("Scegli un numero da 1 a 5"));
 console.log("L'utente ha scelto:",sceltaUtente);
 console.log("Numero Utente:",numeroUtente);
 
 
-// Genera un numero per la CPU
+// Genera un numero random per la CPU
 const numeroCpu = numeroRandom(1, 5);
 console.log("Numero CPU:",numeroCpu);
 
 
-// Somma Numero Utente + numero CPU
-const sommaUtenteCpu = somma(numeroUtente, numeroCpu);
-
-
-
+// Somma numero Utente + numero cpu
 const risultatoSomma = (numeroUtente + numeroCpu);
-var pari = risultatoSomma % 2 == 0;
-var dispari = risultatoSomma % 2 != 0;
+console.log("Risultato somma Utente e CPU:",risultatoSomma);
 
-if ((risultatoSomma % 2 == 0) && (sceltaUtente == "pari")) {
+
+
+
+// Risultato Pari o Dispari
+if (risultatoSomma % 2 === 0) {
+  console.log("Il numero è pari");
+
+} else {
+  console.log("Il numero è dispari");
+}
+
+
+
+
+// Risultato Vincitore
+if ((risultatoSomma % 2 === 0) && (sceltaUtente.toLowerCase() === "pari")) {
  console.log("L'utente ha vinto!");
-} else if (((risultatoSomma % 2 != 0) && (sceltaUtente == "dispari"))) {
+
+} else if (((risultatoSomma % 2 != 0) && (sceltaUtente.toLowerCase() === "dispari"))) {
  console.log("L'utente ha vinto!");
+
 } else {
  console.log("Il computer ha vinto!");
 }
