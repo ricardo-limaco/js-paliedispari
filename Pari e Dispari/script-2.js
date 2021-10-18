@@ -38,7 +38,6 @@ const sommaUtenteCpu = somma(numeroUtente, numeroCpu);
 
 
 
-// Vincitore
 const risultatoSomma = (numeroUtente + numeroCpu);
 var pari = risultatoSomma % 2 == 0;
 var dispari = risultatoSomma % 2 != 0;
